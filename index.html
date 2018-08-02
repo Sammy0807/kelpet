@@ -45,15 +45,23 @@
   
 </head>
 <body>
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
   <script>
-    var p = "ihotu";
-    var k = "ihunanya";
-    var password = prompt("Enter the password to view our Site.");
-    if(password == p || password == k){
-      alert("Correct! Click ok to enter.");
+    var p = "Ihotu";
+    var k = "Ihunanya";
+    swal("Enter the password to view our Site.", {
+  content: "input",
+})
+.then((value) => {
+    if (value == p || value == k) {
+      swal("Correct Password, Click ok to continue");
     }else{
-      window.location = "www.google.ca";           
-    }
+      swal("Incorrect Password, Refresh the page and try again");
+      setTimeout( function () {
+        window.location = "click-the-back-button-to-retry-a-password"
+      }, 500);
+    }  
+});
     </script>
     <header class="header">
     <div class="container">
@@ -109,7 +117,7 @@
             <div class="flex-caption container">
               <h3>We are getting Married!</h3>
               <p>Please join us on
-                <b>15 Dec 2018</b>.</p>
+                <b>08 Dec 2018</b>.</p>
             </div>
           </li>
           <li>
