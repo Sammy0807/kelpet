@@ -44,18 +44,22 @@
   </style>
   
 </head>
-<body>
-  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-  <script>
+<body id="bod">      
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>  
+  <script>  
     var p = "Ihotu";
     var k = "Ihunanya";
+    var bod = document.getElementById('bod');  
+    bod.setAttribute("style","overflow: hidden");
     swal("Enter the password to view our Site.", {
   content: "input",
 })
 .then((value) => {
-    if (value == p || value == k) {
-      swal("Correct Password, Click ok to continue");
+    if (value == p || value == k) {      
+      swal("Correct Password, Click ok to continue"); 
+      bod.setAttribute("style","overflow: visible");    
     }else{
+      function css(){}
       swal("Incorrect Password, Refresh the page and try again");
       setTimeout( function () {
         window.location = "click-the-back-button-to-retry-a-password"
@@ -500,7 +504,7 @@
                 </li>
                 <li>
                   <i class="fab cc-paypal"></i>
-                  <a href="#Still waiting on the link" title="Skype us">Click here to send cash gifts</a>
+                  <a href="https://www.macys.com/wgl/registry/guest/6943900" title="Skype us">Click here to send cash gifts</a>
                 </li>
               </ul>
             </div>
