@@ -62,7 +62,7 @@
       function css(){}
       swal("Incorrect Password, Refresh the page and try again");
       setTimeout( function () {
-        window.location = "click-the-back-button-to-retry-a-password"
+        window.location = "click-the-back-button-to-retry-another-password"
       }, 500);
     }  
 });
@@ -242,7 +242,7 @@
         </div>
       </div>
     </div>
-    <embed src="img/Travis-Greene-Made-A-Way.mp3" autostart="true" loop="infinite" width="2" height="0" type=""></embed>
+    <!-- <embed src="img/Travis-Greene-Made-A-Way.mp3" autostart="false" loop="infinite" width="2" height="0" type=""></embed> -->
   </section>
   <section id="work" class="page-section page">
     <div class="container text-center">
@@ -504,12 +504,13 @@
                 </li>
                 <li>
                   <i class="fab cc-paypal"></i>
-                  <a href="https://www.macys.com/wgl/registry/guest/6943900" title="Skype us">Click here to send cash gifts</a>
+                  <a href="https://www.macys.com/wgl/registry/guest/6943900" title="Skype us">Click here to view our Macy's Registry</a>                  
+                  <a href="https://www.target.com/gift-registry/giftgiver?registryId=0a0e06be5d5f4b63be2f13d75b7aee64&type=WEDDING" title="Skype us">Click here to view our Target Registry</a>
                 </li>
               </ul>
             </div>
           </div>
-          <form method="post" action="mailto:ksheabenedict@gmail.com" id="contactfrm" role="form">
+          <form action="Mailto:kelseywedspeter@gmail.com" method="POST" enctype="text/plain" id="contactfrm">
             <div class="col-md-9">
               <div class="form-group">
                 <h3 class="center">Respondez S'il vous plait
@@ -524,8 +525,10 @@
               </div>
               <div class="form-group">
                 <label for="comments">Message</label>
-                <textarea name="comment" class="form-control" id="comments" cols="3" rows="5" placeholder="Enter your message…" title="Please enter your message (at least 10 characters)"></textarea>
-                <button name="submit" type="submit" class="btn btn-lg btn-primary" id="submit">Submit</button>
+                <textarea name="comment" class="form-control" id="comment" cols="3" rows="5" placeholder="Enter your message…" title="Please enter your message (at least 10 characters)"></textarea>
+              </div>
+              <div class="form-group">
+                  <input name="submit" type="submit" value="Submit" class="btn btn-lg btn-primary" id="submit">
               </div>
               <div class="result"></div>
             </div>
@@ -569,6 +572,30 @@
   </script>
   <script async defer
   src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDTCexTxFVZDe8EB1WvGaqnoGj09IoO3gY&callback=initMap">
+  </script>  
+  <script>
+      var form = document.getElementById('contactfrm');
+      form.onsubmit = function (e) {
+        e.preventDefault();
+        var name = form.name.value,
+            email = form.email.value,
+            comment = form.comment.value;
+          if(!name || !email || !comment){
+            swal('Please Check your enteries');
+          }else{
+            var post = `name: ${name}
+                        email: ${email}
+                        comment: ${comment}`;            
+            swal({
+              title: "Good job!",
+              text: "You have Completed the RSVP",
+              icon: "success",
+              button: "Continue On Our Page"
+            });
+          form.reset();
+          console.log(post);
+          }
+      };
   </script>
 
   <!--[if lte IE 8]><script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script><![endif]-->
