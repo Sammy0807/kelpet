@@ -59,7 +59,6 @@
       swal("Correct Password, Click ok to continue"); 
       bod.setAttribute("style","overflow: visible");    
     }else{
-      function css(){}
       swal("Incorrect Password, Refresh the page and try again");
       setTimeout( function () {
         window.location = "click-the-back-button-to-retry-another-password"
@@ -286,6 +285,15 @@
               </li>
               
               <li class="item web" style="position: absolute; left: 877px; top: 219px;">
+                <a href="img/IMG-20180527-WA0009.png" class="fancybox">
+                  <img src="img/IMG-20180527-WA0009.png" style="height: 200px;" alt="">
+                  <div class="overlay">
+                    <span>#KelPet 2018</span>
+                  </div>
+                </a>
+              </li>
+              
+              <li class="item web" style="position: absolute; left: 877px; top: 219px;">
                 <a href="img/IMG-20180527-WA0011.png" class="fancybox">
                   <img src="img/IMG-20180527-WA0011.png" style="height: 200px;" alt="">
                   <div class="overlay">
@@ -435,7 +443,7 @@
         </div>
       </div>
       <div class="text-center our-services">
-        <div class="row">      
+        <div class="row">       
           
           <div class="col-sm-4 wow fadeInDown animated" data-wow-duration="1000ms" data-wow-delay="450ms" style="visibility: visible; animation-duration: 1000ms; -webkit-animation-duration: 1000ms; animation-delay: 450ms; -webkit-animation-delay: 450ms; animation-name: fadeInDown; -webkit-animation-name: fadeInDown;">
             <div class="service-icon">
@@ -491,37 +499,21 @@
                   <i class="fa fa-phone"></i> +14 099 980 516 | +18 324 256 266 </li>
                 <li>
                   <i class="fa fa-envelope"></i>
-                  <a href="mailto:ksheabenedict@gmail.com" title="Email Us"> ksheabenedict@gmail.com</a>
+                  <a href="mailto:kelseywedspeter@gmail.com" title="Email Us"> kelseywedspeter@gmail.com</a>
                 </li>
                 <li>
                   <i class="fab cc-paypal"></i>
                   <a href="https://www.macys.com/wgl/registry/guest/6943900" title="Skype us">Click here to view our Macy's Registry</a>                  
-                  <a href="https://www.target.com/gift-registry/giftgiver?registryId=0a0e06be5d5f4b63be2f13d75b7aee64&type=WEDDING" title="Skype us">Click here to view our Target Registry</a>
+                  <a href="https://www.target.com/gift-registry/giftgiver?registryId=0a0e06be5d5f4b63be2f13d75b7aee64&type=WEDDING" 
+                  title="Skype us">Click here to view our Target Registry</a>
                 </li>
               </ul>
             </div>
           </div>
-          <form action="Mailto:kelseywedspeter@gmail.com" method="POST" enctype="text/plain" id="contactfrm">
-            <div class="col-md-9">
-              <div class="form-group">
-                <h3 class="center">Respondez S'il vous plait
-                  <b>(RSVP)</b>
-                </h3>
-                <label for="name">Name</label>
-                <input type="text" class="form-control" name="name" id="name" placeholder="Enter name" title="Please enter your name (at least 2 characters)">
-              </div>
-              <div class="form-group">
-                <label for="email">Email</label>
-                <input type="email" class="form-control" name="email" id="email" placeholder="Enter email" title="Please enter a valid email address">
-              </div>
-              <div class="form-group">
-                <label for="comments">Message</label>
-                <textarea name="comment" class="form-control" id="comment" cols="3" rows="5" placeholder="Enter your message…" title="Please enter your message (at least 10 characters)"></textarea>
-              </div>
-              <div class="form-group">
-                  <input name="submit" type="submit" value="Submit" class="btn btn-lg btn-primary" id="submit">
-              </div>
-              <div class="result"></div>
+          <form id="contactfrm">
+            <div class="col-md-7">
+              <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSd4A1Cfe8dAa2z9psvETcxeCA-G-0buCzUXbTRUuRhbeRoTqg/viewform?embedded=true" width="100%" height="auto"
+               frameborder="0" marginheight="0" marginwidth="0" >Loading...</iframe>
             </div>
           </form>
         </div>
@@ -574,17 +566,16 @@
           if(!name || !email || !comment){
             swal('Please Check your enteries');
           }else{
-            var post = `name: ${name}
-                        email: ${email}
-                        comment: ${comment}`;            
+            var post = `name: ${name} \nemail: ${email} \ncomment: ${comment}`;
+            document.location.href = "mailto:kelseywedspeter@gmail.com?subject=Wedding RSVP&body=" + encodeURIComponent(post);     
             swal({
               title: "Good job!",
               text: "You have Completed the RSVP",
               icon: "success",
               button: "Continue On Our Page"
             });
-          form.reset();
           console.log(post);
+          form.reset();
           }
       };
   </script>
